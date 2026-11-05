@@ -3,16 +3,22 @@ package main
 
 import "fmt"
 
-type Estudiante struct {
-    Nombre string
-    nota   float64 // minúscula privada
+var a = b + 1
+var b = valor("b", 10)
+
+func valor(nombre string, v int) int {
+    fmt.Println("inicializando", nombre)
+    return v
 }
 
-func (e Estudiante) Saludar() string {
-    return "Hola, soy " + e.Nombre
+func init() {
+    fmt.Println("init 1: a =", a)
+}
+
+func init() {
+    fmt.Println("init 2")
 }
 
 func main() {
-    e := Estudiante{Nombre: "Jerry", nota: 9.5}
-    fmt.Println(e.Saludar())
+    fmt.Println("main: a =", a, "b =", b)
 }
