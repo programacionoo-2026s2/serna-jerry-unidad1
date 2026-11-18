@@ -45,5 +45,4 @@ for _, caracter := range texto {
 
 fmt.Println("Con tilde/ñ:", conTilde)
 
-    _ = utf8.RuneCountInString
 }
