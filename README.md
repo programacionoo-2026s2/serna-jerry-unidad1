@@ -10,6 +10,22 @@ Este repositorio contiene las tareas y talleres correspondientes a la Unidad 1 d
 ## Actividades
 Las tareas y talleres se organizarán en carpetas individuales conforme sean asignados.
 
+
+### 03-tarea3: Conversor de almacenamiento
+
+Programa desarrollado en Go que permite convertir unidades de almacenamiento (B, KB, MB y GB) desde la línea de comandos.
+
+El programa valida los argumentos ingresados, identifica errores y utiliza códigos de salida para indicar si la ejecución fue correcta.
+
+Archivos principales:
+- `03-tarea3/main.go`: código del conversor.
+- `03-tarea3/go.mod`: módulo de Go.
+- `03-tarea3/README.md`: documentación y pruebas.
+- `03-tarea3/evidencias/`: capturas de las pruebas realizadas.
+
+[Ver la tarea 03-tarea3](03-tarea3/)
+
+
 ## Documentación
 El archivo BITACORA.md registra las sesiones de trabajo, los avances, los problemas encontrados y sus soluciones.
 
