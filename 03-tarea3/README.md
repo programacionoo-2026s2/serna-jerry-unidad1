@@ -1,7 +1,7 @@
 
 # 03-tarea3: Conversor de almacenamiento
 
-## Objetivo
+## Descripción
 
 Desarrollar un programa en Go que permita convertir unidades de almacenamiento desde la línea de comandos, aplicando validaciones y códigos de salida.
 
@@ -41,7 +41,7 @@ Después verifica que las unidades sean válidas.
 
 Finalmente, convierte el valor a bytes y luego a la unidad solicitada.
 
-## Ejecución
+## Cómo ejecutar
 
 Para ejecutar el programa desde la carpeta 03-tarea3:
 
@@ -49,7 +49,7 @@ Para ejecutar el programa desde la carpeta 03-tarea3:
 
 Resultado:
 
-    2048.00 KB = 2.00 MB
+    2048 KB = 2.00 MB
 
 También se puede compilar:
 
