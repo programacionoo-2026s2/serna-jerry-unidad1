@@ -59,6 +59,40 @@ Y ejecutar en Windows:
 
     .\convertir.exe 2048 KB MB
 
+
+### Verificación de códigos de salida en PowerShell
+
+Para comprobar los códigos de salida reales del programa, primero se compila el ejecutable:
+
+```powershell
+go build -o convertir.exe .
+```
+
+Después se ejecuta una prueba y se consulta el código de salida:
+
+```powershell
+.\convertir.exe 2048 KB MB
+$LASTEXITCODE
+```
+
+El código `0` indica que la conversión fue exitosa.
+
+También se pueden comprobar los errores:
+
+```powershell
+.\convertir.exe abc KB MB
+$LASTEXITCODE
+```
+
+El código `2` indica que el valor ingresado no es válido.
+
+Los códigos utilizados son:
+
+- `0`: ejecución correcta.
+- `1`: cantidad incorrecta de argumentos.
+- `2`: valor no numérico o negativo.
+- `3`: unidad de almacenamiento no válida.
+
 ## Códigos de salida
 
 - 0: Ejecución correcta.
