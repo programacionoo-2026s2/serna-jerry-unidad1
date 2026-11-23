@@ -1,83 +1,62 @@
+# 04-taller1: FizzBuzz con switch sin condición
 
-# Taller 4 - Analizador de texto
+## Descripción
 
-## Objetivo
+Este programa está desarrollado en Go y utiliza un bucle `for` para recorrer los números del 1 al 30.
 
-Desarrollar un programa en Go que analice una cadena de texto utilizando las bibliotecas strings, unicode y unicode/utf8.
+Mediante un `switch` sin condición, comprueba si cada número es múltiplo de 15, 3 o 5.
 
-## 1. Estrategia de desarrollo
+- Si es múltiplo de 15, imprime `FizzBuzz`.
+- Si es múltiplo de 3, imprime `Fizz`.
+- Si es múltiplo de 5, imprime `Buzz`.
+- Si no cumple ninguna condición, imprime el número.
 
-Primero creé el archivo analizador.go dentro de la carpeta 04-taller1.
+El programa también utiliza contadores para registrar cuántas veces aparece cada palabra.
 
-Después declaré una variable llamada texto con la siguiente cadena:
+## Cómo ejecutar
 
-"Programación en Go: rápido, simple y ¡divertido! Año 2026."
+Abrir una terminal dentro de la carpeta `04-taller1` y ejecutar:
 
-Implementé cada requisito por separado y ejecuté el programa para comprobar los resultados.
+```bash
+go run .
+```
 
-## 2. Conteo de bytes y runas
+## Resultado
 
-Utilicé len(texto) para contar los bytes y utf8.RuneCountInString(texto) para contar las runas.
+Salida del programa original:
 
-Resultados:
+```text
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz
+Fizz=8 Buzz=4 FizzBuzz=2
+```
 
-- Bytes: 62
-- Runas: 58
+### Experimento: cambiar el orden de los case
 
-## 3. Conteo de palabras
+Se modificó temporalmente el orden del `switch`, colocando `case i%3 == 0` antes de `case i%15 == 0`.
 
-Utilicé strings.Fields(texto) para separar las palabras y len(palabras) para contarlas.
+La salida obtenida fue:
 
-Resultado:
+```text
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 Fizz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 Fizz
+Fizz=10 Buzz=4 FizzBuzz=0
+```
 
-- Palabras: 9
+Después del experimento, se restauró el orden original para que el programa funcionara correctamente.
 
-## 4. Conteo de mayúsculas y dígitos
+## Preguntas
 
-Recorrí el texto utilizando range.
+### a) ¿Qué salida y qué conteos obtuviste al poner el case de 3 antes que el de 15, y por qué FizzBuzz dejó de aparecer?
 
-Con unicode.IsUpper identifiqué las letras mayúsculas y con unicode.IsDigit identifiqué los dígitos.
+Obtuve `Fizz=10 Buzz=4 FizzBuzz=0`.
 
-Resultados:
+Esto ocurrió porque Go revisa los `case` en orden y ejecuta únicamente el primero que cumple la condición. Los números 15 y 30 también son múltiplos de 3, por lo que se imprimió `Fizz` en lugar de `FizzBuzz`.
 
-- Mayúsculas: 3
-- Dígitos: 4
+Por esta razón, el contador de Fizz aumentó de 8 a 10 y el de FizzBuzz disminuyó de 2 a 0.
 
-## 5. Conteo de letras con tilde o ñ
+### b) Cuando i vale 15, ¿cuántos case son verdaderos y cuál ejecuta Go? ¿Por qué no hace falta escribir break al final de cada case?
 
-Utilicé strings.ContainsRune para comprobar si cada carácter pertenece al conjunto de vocales acentuadas o letras ñ y Ñ.
+Cuando `i` vale 15, las tres condiciones son verdaderas porque 15 es divisible entre 15, 3 y 5.
 
-Resultado:
+Sin embargo, Go ejecuta únicamente el primer `case` verdadero. En el programa original ejecuta `case i%15 == 0`, por lo que imprime `FizzBuzz`.
 
-- Con tilde/ñ: 3
-
-## 6. Diferencia entre bytes y runas
-
-Los bytes y las runas no coinciden porque Go utiliza la codificación UTF-8, donde algunos caracteres ocupan más de un byte.
-
-En el texto analizado, los caracteres ó, á, ¡ y ñ ocupan dos bytes cada uno, pero representan una sola runa.
-
-Por eso el texto contiene 62 bytes y 58 runas.
-
-## 7. Resultado final
-
-Al ejecutar el comando:
-
-go run analizador.go
-
-Obtuve los siguientes resultados:
-
-Bytes: 62
-Runas: 58
-Palabras: 9
-Mayúsculas: 3
-Dígitos: 4
-Con tilde/ñ: 3
-
-## Conclusión
-
-Este taller me permitió comprender cómo analizar cadenas de texto en Go.
-
-Aprendí a contar bytes, runas y palabras, además de identificar letras mayúsculas, dígitos y caracteres acentuados.
-
-También comprendí la importancia de Unicode y UTF-8 para trabajar correctamente con textos que contienen caracteres especiales.
+No hace falta escribir `break` porque Go termina automáticamente el `switch` después de ejecutar el caso seleccionado, salvo que se utilice explícitamente `fallthrough`.

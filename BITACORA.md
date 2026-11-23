@@ -81,3 +81,24 @@ Moví la carpeta al repositorio serna-jerry-unidad1 y comprobé que el programa 
 
 **Aprendizaje:**
 Comprendí la diferencia entre bytes y runas en UTF-8 y aprendí a contar palabras correctamente, incluso cuando existen espacios consecutivos.
+## 04-taller1: FizzBuzz con switch sin condición
+
+**Actividad realizada:** Desarrollo de un programa FizzBuzz en Go utilizando un switch sin condición.
+
+**Avances:**
+- Creé el módulo de Go y el archivo main.go.
+- Implementé un bucle for para recorrer los números del 1 al 30.
+- Utilicé un switch sin condición, sin if/else.
+- Implementé contadores para Fizz, Buzz y FizzBuzz.
+- Verifiqué los resultados: Fizz=8, Buzz=4 y FizzBuzz=2.
+- Realicé un experimento cambiando el orden de los case.
+- Documenté los resultados y respondí las preguntas del taller.
+
+**Problema encontrado:**
+Al modificar el orden de los case, eliminé accidentalmente una llave de cierre y el programa mostró un error de sintaxis.
+
+**Solución aplicada:**
+Revisé la estructura del código, corregí las llaves y ejecuté nuevamente el programa. Después del experimento restauré el orden original.
+
+**Aprendizaje:**
+Comprendí que Go ejecuta el primer case verdadero de un switch y que el orden de las condiciones afecta el resultado. También aprendí que no es necesario escribir break al finalizar cada case.

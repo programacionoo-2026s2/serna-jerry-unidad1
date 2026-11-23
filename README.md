@@ -25,6 +25,13 @@ Archivos principales:
 [Ver la tarea 03-tarea3](03-tarea3/)
 - [03-tarea4: Del monolito a los paquetes](03-tarea4/README.md) — Conversor de almacenamiento en Go organizado en paquetes, con funciones exportadas, paquete internal y pruebas de compilación.
 - [03-tarea5: Analizador de texto](03-tarea5/README.md) — Programa en Go que analiza bytes, runas, palabras y caracteres Unicode, con validación de subtítulos de 42 runas.
+### 04-taller1: FizzBuzz con switch sin condición
+
+Programa desarrollado en Go que utiliza un bucle `for` y un `switch` sin condición para resolver FizzBuzz del 1 al 30.
+
+Incluye contadores de resultados, un experimento sobre el orden de los `case` y sus respectivas conclusiones.
+
+[Ver taller 04-taller1](04-taller1/README.md)
 
 ## Documentación
 El archivo BITACORA.md registra las sesiones de trabajo, los avances, los problemas encontrados y sus soluciones.
