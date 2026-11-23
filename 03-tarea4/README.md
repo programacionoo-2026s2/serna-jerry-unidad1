@@ -95,3 +95,20 @@ El compilador mostró `undefined: almacenamiento.redondear`. Esto ocurre porque 
 **c) ¿Para qué sirve que el paquete esté dentro de internal/ y qué pasaría si otro módulo intentara importarlo?**
 
 La carpeta internal restringe quién puede importar el paquete. En este proyecto, el código del módulo tarea4 puede utilizarlo, pero otro módulo externo no puede importarlo directamente. Esto ayuda a proteger la implementación interna del proyecto.
+
+
+## Comparación entre la versión monolítica y la modular
+
+| Aspecto | Versión monolítica | Versión modular |
+|---|---|---|
+| Organización | Toda la lógica está en `main.go`. | La conversión está en `internal/almacenamiento`. |
+| Validación de unidades | Se realiza directamente en `main.go`. | Se utiliza la función `almacenamiento.Bytes`. |
+| Conversión | Se calcula con un mapa de factores. | Se utiliza `almacenamiento.Convertir`. |
+| Encapsulamiento | No existe separación entre paquetes. | `redondear` permanece privada dentro del paquete. |
+| Mantenimiento | Las responsabilidades están mezcladas. | Cada archivo tiene una responsabilidad más definida. |
+
+### Conclusión
+
+La versión modular conserva los resultados de las ocho pruebas oficiales y los códigos de salida del programa original.
+
+La principal mejora es la separación de responsabilidades: `main.go` controla la interacción con el usuario, mientras que el paquete `almacenamiento` realiza las conversiones. Esto facilita la lectura, el mantenimiento y la reutilización del código.
