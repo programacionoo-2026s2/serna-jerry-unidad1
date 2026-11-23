@@ -24,10 +24,10 @@ Archivos principales:
 - `03-tarea3/evidencias/`: capturas de las pruebas realizadas.
 
 [Ver la tarea 03-tarea3](03-tarea3/)
-
-
+- [03-tarea4: Del monolito a los paquetes](03-tarea4/README.md) — Conversor de almacenamiento en Go organizado en paquetes, con funciones exportadas, paquete internal y pruebas de compilación.
 ## Documentación
 El archivo BITACORA.md registra las sesiones de trabajo, los avances, los problemas encontrados y sus soluciones.
 
 ## Estado del proyecto
 En preparación.
+

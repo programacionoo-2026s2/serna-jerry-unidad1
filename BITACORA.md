@@ -39,3 +39,25 @@ Configuré temporalmente la variable PATH para incluir la carpeta donde estaba i
 **Próximo paso:**
 Completar los commits pendientes en sesiones distintas, verificar los archivos del repositorio y subir la tarea a GitHub.
 
+
+## 03-tarea4: Del monolito a los paquetes
+
+**Fecha:** 22 de noviembre de 2026
+
+### Trabajo realizado
+- Creé el módulo `tarea4` y reutilicé el conversor de la tarea anterior como versión monolítica.
+- Separé la lógica de conversión en el paquete `internal/almacenamiento`.
+- Implementé las constantes exportadas `B`, `KB`, `MB` y `GB`.
+- Creé las funciones exportadas `Bytes` y `Convertir`, y la función privada `redondear`.
+- Actualicé `main.go` para importar el nuevo paquete.
+- Ejecuté los ocho casos oficiales y obtuve los resultados y códigos de salida esperados.
+
+### Error encontrado y solución
+Intenté utilizar `almacenamiento.redondear` desde `main.go`, pero el compilador mostró:
+
+`undefined: almacenamiento.redondear`
+
+Comprendí que las funciones que comienzan con minúscula no se pueden utilizar desde otros paquetes. Eliminé la llamada temporal y comprobé que el programa volviera a compilar correctamente.
+
+### Aprendizaje
+Aprendí a organizar un programa de Go en paquetes, utilizar rutas de importación, distinguir identificadores exportados y privados, y comprobar que una reorganización del código no cambie su funcionamiento.
