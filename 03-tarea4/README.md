@@ -112,3 +112,19 @@ La carpeta internal restringe quién puede importar el paquete. En este proyecto
 La versión modular conserva los resultados de las ocho pruebas oficiales y los códigos de salida del programa original.
 
 La principal mejora es la separación de responsabilidades: `main.go` controla la interacción con el usuario, mientras que el paquete `almacenamiento` realiza las conversiones. Esto facilita la lectura, el mantenimiento y la reutilización del código.
+
+
+### Verificación del comportamiento
+
+La versión monolítica se compiló correctamente antes de separar el código en paquetes.
+
+Después de crear `internal/almacenamiento`, ejecuté los ocho casos oficiales con la versión modular. Todos produjeron las salidas y los códigos esperados.
+
+Esto confirma que la reorganización del programa conserva el comportamiento requerido.
+
+También ejecuté las siguientes verificaciones:
+
+- `go build .`: compilación correcta.
+- `gofmt -l .`: no mostró archivos pendientes de formato.
+- `go vet ./...`: no mostró advertencias.
+- `go doc ./internal/almacenamiento`: mostró las constantes y las funciones exportadas `Bytes` y `Convertir`, sin exponer `redondear`.
