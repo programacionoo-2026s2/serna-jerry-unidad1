@@ -61,3 +61,23 @@ Comprendí que las funciones que comienzan con minúscula no se pueden utilizar 
 
 ### Aprendizaje
 Aprendí a organizar un programa de Go en paquetes, utilizar rutas de importación, distinguir identificadores exportados y privados, y comprobar que una reorganización del código no cambie su funcionamiento.
+
+## 03-tarea5: Analizador de texto
+
+**Actividad realizada:** Desarrollo de un analizador de texto en Go.
+
+**Avances:**
+- Creación del módulo y archivo main.go.
+- Implementación del conteo de bytes, runas, palabras, letras, dígitos y mayúsculas.
+- Validación del límite de 42 runas.
+- Ejecución exitosa de las 8 pruebas oficiales.
+- Elaboración del README con instrucciones, resultados y respuestas.
+
+**Problema encontrado:**
+Inicialmente creé la carpeta 03-tarea5 fuera del repositorio principal.
+
+**Solución aplicada:**
+Moví la carpeta al repositorio serna-jerry-unidad1 y comprobé que el programa funcionara correctamente desde su ubicación definitiva.
+
+**Aprendizaje:**
+Comprendí la diferencia entre bytes y runas en UTF-8 y aprendí a contar palabras correctamente, incluso cuando existen espacios consecutivos.
