@@ -104,3 +104,15 @@ Revisé la estructura del código, corregí las llaves y ejecuté nuevamente el 
 Comprendí que Go ejecuta el primer case verdadero de un switch y que el orden de las condiciones afecta el resultado. También aprendí que no es necesario escribir break al finalizar cada case.
 ## 05-taller1: Estadísticas variádicas
 Creé el módulo, declaré la función variádica y comprobé el error centinela ErrSinDatos.
+
+**Avances:**
+- Implementé el cálculo de la nota menor, mayor y promedio.
+- Utilicé las funciones integradas min y max.
+- Comprobé el funcionamiento con valores individuales y slices.
+- Verifiqué el error centinela mediante errors.Is.
+
+**Aprendizaje:**
+Comprendí cómo funcionan las funciones variádicas y los resultados con nombre. También aprendí que los tres puntos permiten pasar los elementos de un slice como argumentos individuales.
+
+**Pruebas:**
+Las tres líneas de salida coinciden con los resultados esperados.
