@@ -102,3 +102,5 @@ Revisé la estructura del código, corregí las llaves y ejecuté nuevamente el 
 
 **Aprendizaje:**
 Comprendí que Go ejecuta el primer case verdadero de un switch y que el orden de las condiciones afecta el resultado. También aprendí que no es necesario escribir break al finalizar cada case.
+## 05-taller1: Estadísticas variádicas
+Creé el módulo, declaré la función variádica y comprobé el error centinela ErrSinDatos.

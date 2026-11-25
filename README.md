@@ -39,3 +39,5 @@ El archivo BITACORA.md registra las sesiones de trabajo, los avances, los proble
 ## Estado del proyecto
 En preparación.
 
+
+- [05-taller1: Estadísticas variádicas](05-taller1/README.md) - Funciones y manejo de errores en Go.
